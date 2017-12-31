@@ -1,5 +1,5 @@
 
-const clientId = '';
+const clientId = '4d6d170f2a0d4ff4ad67a1a259f00e9c';
 const redirectUri = 'http://localhost:3000/';
 const urlApi = 'https://accounts.spotify.com/authorize?';
 
