@@ -26,10 +26,8 @@ class Track extends React.Component {
 		return (
 
 				<div className="Track">
-	                <div className="Track-information">
-	                  <h3>{this.props.track.album}</h3>
-	                  <p>{this.props.track.artist} | {this.props.track.name}</p>
-	                </div>
+					    <iframe src={`https://open.spotify.com/embed?uri=${this.props.uri}`}
+        frameBorder="0" allowtransparency="true" height="80px" width="640px"></iframe>
 	                <a className="Track-action" onClick=
 	                	{
 	                		this.props.isRemovel ? this.removeTrack : this.addTrack
