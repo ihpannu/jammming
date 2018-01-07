@@ -1,0 +1,6 @@
+Features implemented
+
+- Pressing enter triggers a search
+- Include preview samples for each track
+
+ps: my english writing is bad so there is no Feature Request here.
