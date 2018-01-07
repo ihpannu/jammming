@@ -8,24 +8,20 @@ let expTime = '';
 
 export const Spotify = {
 
-	getAccessToken(){
+	getAccessToken(term){
 		let url = window.location.href;
 		if(accessToken){
-			console.log('1');
 			return accessToken;
 		}else if(url.match(/access_token=([^&]*)/) && url.match(/expires_in=([^&]*)/)){ 
 			accessToken = url.match(/access_token=([^&]*)/)[1];
 			expTime = url.match(/expires_in=([^&]*)/)[1];
 			window.setTimeout(() => accessToken = '', expTime * 1000);
-			window.history.pushState('Access Token', null, '/');
-			console.log('2');
 			return accessToken;	
 		}
 		else{
 			console.log('redirect...');
 			const queryUrl = urlApi + `client_id=${clientId}&redirect_uri=${redirectUri
 			}&response_type=token&scope=playlist-modify-public`;
-			console.log('3');
 			window.location = queryUrl;
 		}	
 	},

@@ -12,8 +12,7 @@ class App extends Component {
 		this.state = {
 			searchResults: [],
 			playlistTracks: [],
-			playlistName: 'New PlayList',
-			lastSearch: ''
+			playlistName: 'New PlayList'
 		};
 		this.addTrack = this.addTrack.bind(this);
 		this.removeTrack = this.removeTrack.bind(this);
@@ -63,9 +62,6 @@ class App extends Component {
 	}
 
 	search(term){
-		this.setState({
-			lastSearch: term
-		})
 		Spotify.search(term).then(tracksArr => {
 			this.setState({searchResults: tracksArr});
 		})
@@ -77,7 +73,7 @@ class App extends Component {
 	      <div>
 	      	  <h1>Ja<span className="highlight">mmm</span>ing</h1>		
 			  <div className="App">
-				    <SearchBar onSearch={this.search} lastSearch={this.state.lastSearch}/>		  
+				    <SearchBar onSearch={this.search} lastSearch={this.checkCache()}/>		  
 				    <div className="App-playlist">
 				  		<SearchList searchResults={this.state.searchResults} 
 				  					onAdd={this.addTrack}/>

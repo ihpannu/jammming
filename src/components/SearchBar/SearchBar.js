@@ -9,9 +9,11 @@ class SearchBar extends React.Component{
 		this.search = this.search.bind(this);
 		this.handleTermChange = this.handleTermChange.bind(this);
 		this.handleKeyPress = this.handleKeyPress.bind(this);
+
 	}
 
 	search(){
+
 		this.props.onSearch(this.state.term);
 	}
 
@@ -27,14 +29,14 @@ class SearchBar extends React.Component{
 		}
 	}
 
+
 	render(){
 
 		return (
 			<div className="SearchBar">
           		<input placeholder="Enter A Song Title" 
           		       onChange={this.handleTermChange} 
-          			   onKeyPress={this.handleKeyPress}
-          			   value={this.state.term ? this.state.term : this.props.lastSearch}/>
+          			   onKeyPress={this.handleKeyPress}/>
           		<a onClick={this.search}>SEARCH</a>
         	</div>
         );
